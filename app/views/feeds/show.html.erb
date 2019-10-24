@@ -3,6 +3,7 @@
 <p>
   <strong>Image:</strong>
   <%= image_tag @feed.image.url %>
+  <%= @feed.content %>
 </p>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
