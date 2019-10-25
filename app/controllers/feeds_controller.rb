@@ -26,7 +26,6 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_user.feeds.new(feed_params)
-
     respond_to do |format|
       if @feed.save
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
