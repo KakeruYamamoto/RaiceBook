@@ -4,29 +4,36 @@
     <title>RaiceBook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header class="header">
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <div class="class="container">
+      <h1>RaiceBook</h1>
+      <header class="header" class="row">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
 
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
-    </header>
-    <%= yield %>
-    <footer class="footer">
-      <p>運営会社RaiceBooK株式会社</p>
-      <p>© 1994-2019 Copyright YAMAMOTO Corp.</p>
-    </footer>
+      <% if logged_in? %>
+      <ul class="row">
+        <li class="col-md-offset-4 col-md-2"><%= link_to "Profile", user_path(current_user.id) %></li>
+        <li class="col-md-1"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+      <% else %>
+        <li class="col-md-offset-4 col-md-2"><%= link_to "Sign up", new_user_path %></li>
+        <li class="col-md-1"><%= link_to "Login", new_session_path %></li>
+      <% end %>
+      </ul>
+      </header>
+
+      <%= yield %>
+
+      <footer class="footer" class="container">
+        <p>運営会社RaiceBooK株式会社</p>
+        <p>© 1994-2019 Copyright YAMAMOTO Corp.</p>
+      </footer>
+    </div>
   </body>
 </html>

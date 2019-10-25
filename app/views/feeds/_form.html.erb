@@ -1,4 +1,7 @@
 <%= form_with(model: feed, local: true, url:choose_new_or_edit) do |form| %>
+<div class="container">
+
+<div class="row">
 
   <div class="field">
     <%= form.label :image %>
@@ -12,8 +15,9 @@
     <%= form.text_field :content %>
   </div>
 
-
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+</div>
