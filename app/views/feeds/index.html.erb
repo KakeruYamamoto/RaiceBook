@@ -13,7 +13,7 @@
   <tbody class="row">
     <% @feeds.each do |feed| %>
       <tr>
-        <td class="col-md-6"><%= feed.image %></td>
+        <td class="col-md-6"><%= image_tag feed.image.url, :size =>'100x100' %></td>
         <td class="col-md-6"><%= feed.content %></td>
         <td class="col-md-6"><%= link_to 'Show', feed %></td>
         <td class="col-md-6"><%= link_to 'Edit', edit_feed_path(feed) %></td>
