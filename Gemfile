@@ -25,6 +25,17 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'rspec-rails'# 追加rspec
+  gem 'spring-commands-rspec'#rspecのテストを実行するcommand
+  gem 'factory_bot_rails'#フィクスチャ作成時にそれぞれのデータを関連付けることができる
+  gem 'faker'#フィクスチャ作詞時に適当な値を作成  inst課題で使用
+  gem 'capybara', '~> 2.13'#重複に注意  不具合の探索を行ってくれる
+  gem 'database_cleaner'#溜まったテストデータを削除してくれる
+  gem 'launchy'#capybaraでテスト厨二どのページが開いているのか確認できるようにしてくれる
+  gem 'selenium-webdriver'#複数のテストを並行して実施してっくれる
+#   $ bundle install
+#   $ bundle exec spring binstub rspec
 end
 
 group :development do
@@ -35,7 +46,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+#  gem 'capybara', '>= 2.15'#重複している
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
