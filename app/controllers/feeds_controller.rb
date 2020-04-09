@@ -47,6 +47,16 @@ class FeedsController < ApplicationController
     redirect_to feeds_url, notice: 'Feed was successfully destroyed.'
   end
 
+  def new_guest
+    user = User.find_or_create_by!(email: 'guest@example.com', name: 'ゲスト太郎') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.created_at = Time.now
+    end
+    session[:user_id] = user.id
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
+
+
   private
 
   def set_feed
