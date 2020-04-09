@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      feed: "記事"
+      movie: "映画"
+      user: "ユーザー"
+    attributes:
+      feed:
+        image: "写真"
+        content: "内容"
+        created_at: "投稿の日時"
+        updated_at: "更新の日時"
+      movie:
+        title: "タイトル"
+        production_year: "公開年月"
+        running_time: "上映時間"
+        rating: "評価"
+        created_at: "投稿日時"
+        updated_at: "更新日時"
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        created_at: "作成日時"
+        updated_at: "更新日時"

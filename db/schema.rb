@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20_191_109_061_226) do
     t.index ['user_id'], name: 'index_feeds_on_user_id'
   end
 
+  # moviesテーブルはspecの小課題にて作成。本課題とは無関係
   create_table 'movies', force: :cascade do |t|
     t.string 'title'
     t.integer 'production_year'
