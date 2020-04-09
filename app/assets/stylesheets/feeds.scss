@@ -1,8 +1,145 @@
-// Place all the styles related to the feeds controller here.
+// Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-div .row {
-  color :black;
+
+footer {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+a {
+  color: #white;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    opacity: 0.3;
+    background-color: #CD2F2A;
+  }
+}
+
+.event_link {
+  &:hover {
+    opacity: 0.7;
+    background-color: #fff;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+  .paginate {
+    margin-top: 15px
+  }
+
+
+#eventImage{
+  max-width: 100%;
+  height: auto;
+}
+
+#event_card3 {
+  margin:0 auto;
+}
+
+// user/show,event/favorite,parthicipante,search
+#event_list{
+  margin:0 auto;
+}
+
+#error_explanation ul li {
+  list-style: none;
+}
+
+#error_explanation {
+  margin:0 auto;
+}
+
+.event_show {
+  text-align: left;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search_reslut {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    background-color: #F5F5F5;
+    opacity: 0.7;
+  }
+}
+
+.search_index {
+  background-color: white;
+  padding: 20px;
+}
+
+p .image_icon {
+  border-style: solid;
+  border-width: thin;
+  border-color: #9C9C9D;
+}
+
+td .image_icon {
+  border-style: solid;
+  border-width: thin;
+  border-color: #9C9C9D;
+}
+.image_icon {
+  border-style: solid;
+  border-width: thin;
+  border-color: #9C9C9D;
+}
+
+.image_icon.img-fluid {
+  border-style: solid;
+  border-width: thin;
+  border-color: #9C9C9D;
 }

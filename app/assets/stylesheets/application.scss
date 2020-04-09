@@ -16,43 +16,25 @@
  */
 
 
-
-
-body{
-    text-align:center;
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #E9EBEE
 }
- .header{
-     font-size:20px;
-     font-weight:bold;
-     background-color: #000080;
-     padding: 25px;
-
- }
- .container{
-     margin-top:20px;
-     padding-bottom: 100px;
- }
- .footer {
-  background-color: #000080;
-  width: 100%;
-  padding: 20px 0 10px 0;
-  color: white;
-  margin: auto;
-  padding-bottom: 10px;
-  position: absolute;
-  bottom: 0;
- }
-
- .footer p {
-   color: white;
- }
-
- html {
-  position: relative;
-  min-height: 100%;
+nav.navbar {
+  background-color: #CD2F2A;
+}
+footer {
+  margin-top: auto;
+  background-color: #CD2F2A;
 }
 
 li{
     list-style:none;
-    color: white;
+}
+
+ul{
+    padding:0;
 }
