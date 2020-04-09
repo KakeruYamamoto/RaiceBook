@@ -8,7 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user.id)
+      if @user&.authenticate(user_params[:password])
+        session[:user_id] = @user.id
+        redirect_to feeds_path, notice: '新しくアカウントを作りました'
+      end
     else
       render 'new'
     end
