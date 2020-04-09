@@ -11,7 +11,7 @@
                   <%= image_tag "my_page_default_img1.png", size: '50x50', class: "account_pic" %>
                 </td>
                 <td class="name_and_content">
-                  <span class="account_name">名無しさん</span>
+                  <span class="account_name"><%= feed.user.name %>さん</span>
                   <span class="account_name_thin"><%= feed.created_at.try(:strftime,"%Y年%m月%d日") %></span>
                 </td>
                 <% if logged_in? && current_user.id == feed.user.id %>
