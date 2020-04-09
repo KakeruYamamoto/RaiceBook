@@ -5,7 +5,6 @@
       <div class="card" id="resize_card" >
         <%= link_to feed,class: "feed_link" do %>
           <div class="card-body">
-
             <table>
               <tr>
                 <td class="pic">
@@ -15,20 +14,20 @@
                   <span class="account_name">名無しさん</span>
                   <span class="account_name_thin"><%= feed.created_at.try(:strftime,"%Y年%m月%d日") %></span>
                 </td>
-                <td class="edit">
-                  <%= link_to edit_feed_path(feed.id) do %>
-                    <%= image_tag "edit1.png", size: '14x14' %>
+                <% if logged_in? && current_user.id == feed.user.id %>
+                  <td class="edit">
+                    <%= link_to edit_feed_path(feed.id) do %>
+                      <%= image_tag "edit1.png", size: '14x14' %>
+                    <% end %>
+                  </td>
+                  <td class="edit">
+                  <%= link_to feed_path(feed.id), method: :delete ,data: { confirm: '投稿を削除しますか？' } do %>
+                    <%= image_tag "delete1.png", size: '14x14' %>
                   <% end %>
-                </td>
-                <td class="edit">
-                <%= link_to feed_path(feed.id), method: :delete ,data: { confirm: '投稿を削除しますか？' } do %>
-                  <%= image_tag "delete1.png", size: '14x14' %>
+                  </td>
                 <% end %>
-                </td>
               </tr>
             </table>
-
-            <%# <!-- <strong><p class="card-text"><%= feed.created_at.strftime("%Y年%-m月%-d日(#{weeks[index - 1]}) %-H時%-M分") %></p></strong>
             <p class="card-text"><%= feed.content %></p>
           </div>
           <%= image_tag feed.image.url , :size =>'450x300', class: "card-img-bottom" %>
