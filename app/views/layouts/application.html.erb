@@ -8,32 +8,52 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div class="class="container">
-      <h1>RaiceBook</h1>
-      <header class="header" class="row">
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
-
-      <% if logged_in? %>
-      <ul class="row">
-        <li class="col-md-offset-4 col-md-2"><%= link_to "Profile", user_path(current_user.id) %></li>
-        <li class="col-md-1"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
-      <% else %>
-        <li class="col-md-offset-4 col-md-2"><%= link_to "Sign up", new_user_path %></li>
-        <li class="col-md-1"><%= link_to "Login", new_session_path %></li>
-      <% end %>
-      </ul>
-      </header>
-
+    <div class="container-fluid" id="wrapper">
+      <nav class="navbar navbar-expand-lg">
+        <%= link_to "RaiceBooK", feeds_path, class:"navbar-brand" %>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarForm" aria-controls="navbarForm" aria-expanded="false" aria-label="ナビゲーションの切替">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarForm">
+          <ul class="navbar-nav">
+          <% if logged_in? %>
+            <li class="nav-item">
+              <%= link_to "ホーム", feeds_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "プロフィール", user_path(current_user.id), class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規イベント作成", new_feed_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規イベント作成", new_feed_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item" >
+              <%= link_to "ログアウト", session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？' }, class:"nav-link"  %>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "ホーム", feeds_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ユーザ登録", new_user_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログイン", new_session_path, class:"nav-link" %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </nav>
       <%= yield %>
-
       <footer class="footer" class="container">
         <p>運営会社RaiceBooK株式会社</p>
         <p>© 1994-2019 Copyright YAMAMOTO Corp.</p>
       </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>
 </html>
