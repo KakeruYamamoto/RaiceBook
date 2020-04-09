@@ -1,5 +1,6 @@
-Rails.application.configure do
+# frozen_string_literal: true
 
+Rails.application.configure do
   config.cache_classes = false
 
   config.eager_load = false
@@ -34,7 +35,6 @@ Rails.application.configure do
   config.assets.debug = true
 
   config.assets.quiet = true
-
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

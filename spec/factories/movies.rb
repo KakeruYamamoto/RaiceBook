@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :movie do
-    title { "MyString" }
+    title { 'MyString' }
     production_year { 1 }
     running_time { 1 }
-    rating { "MyText" }
+    rating { 'MyText' }
   end
 end
