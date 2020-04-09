@@ -24,7 +24,7 @@ a {
   }
 }
 
-.event_link {
+.feed_link {
   &:hover {
     opacity: 0.7;
     background-color: #fff;
@@ -38,12 +38,11 @@ a {
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: table;
-
+  // display: table;
+  display: inline;
 }
 
 #error_explanation {
-  width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
@@ -74,17 +73,17 @@ label {
   }
 
 
-#eventImage{
+#feedImage{
   max-width: 100%;
   height: auto;
 }
 
-#event_card3 {
+#feed_card3 {
   margin:0 auto;
 }
 
-// user/show,event/favorite,parthicipante,search
-#event_list{
+// user/show,feed/favorite,parthicipante,search
+#feed_list{
   margin:0 auto;
 }
 
@@ -96,8 +95,7 @@ label {
   margin:0 auto;
 }
 
-.event_show {
-  text-align: left;
+.feed_show {
   background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -116,9 +114,12 @@ label {
   }
 }
 
-.search_index {
+.new_account {
   background-color: white;
-  padding: 20px;
+  width: 250px;
+  margin-top: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 p .image_icon {
@@ -142,4 +143,17 @@ td .image_icon {
   border-style: solid;
   border-width: thin;
   border-color: #9C9C9D;
+}
+
+.account_pic {
+  border-radius: 30px
+}
+
+.post_from{
+  background-color: white;
+  margin-right: 5px;
+}
+
+.image_field {
+  padding-top: 5px;
 }

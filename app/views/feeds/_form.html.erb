@@ -1,23 +1,29 @@
-<%= form_with(model: feed, local: true, url:choose_new_or_edit) do |form| %>
-<div class="container">
-
-<div class="row">
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
+<div class="text-center">
+  <div class="container post_from">
+    <%= form_with(model: @feed, local: true) do |form| %>
+      <% if @feed.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @feed.errors.count %>件のエラーがあります。</h2>
+          <ul>
+          <% @feed.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <br>
+      <% if logged_in? %>
+        <div class="row justify-content-center">
+          <%= form.label :content,class: "sr-only" %>
+          <%= form.text_area :content , autocomplete: "content", autocomplete: "content" ,class: "form-control",id: "exampleFormControlTextarea1",rows: "5",placeholder: "#{current_user.name}さんーいまなにしてる？" %>
+        </div>
+        <div class="image_field">
+        <%= form.file_field :image %>
+        </div>
+        <br>
+        <%= form.submit "投稿", data: { confirm: 'この内容でよろしいですか？' } %>
+      <% end %>
+    <% end %>
+    <br>
   </div>
-
-  <div class="comment_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-</div>
 </div>

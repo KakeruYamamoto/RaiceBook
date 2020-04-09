@@ -1,30 +1,39 @@
-<div class="container">
-
-<p id="notice"><%= notice %></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-
-  <tbody class="row">
+<div class="row row-cols-1 row-cols-md-3 overflow-auto">
+  <div class="col mx-auto mb-4">
+    <%= render 'form', feed: @feed %>
     <% @feeds.each do |feed| %>
-      <tr>
-        <td class="col-md-6"><%= image_tag feed.image.url, :size =>'100x100' %></td>
-        <td class="col-md-6"><%= feed.content %></td>
-        <td class="col-md-6"><%= link_to 'Show', feed %></td>
-        <td class="col-md-6"><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td class="col-md-6"><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="card" id="resize_card" >
+        <%= link_to feed,class: "feed_link" do %>
+          <div class="card-body">
+
+            <table>
+              <tr>
+                <td class="pic">
+                  <%= image_tag "my_page_default_img1.png", size: '50x50', class: "account_pic" %>
+                </td>
+                <td class="name_and_content">
+                  <span class="account_name">名無しさん</span>
+                  <span class="account_name_thin"><%= feed.created_at.try(:strftime,"%Y年%m月%d日") %></span>
+                </td>
+                <td class="edit">
+                  <%= link_to edit_feed_path(feed.id) do %>
+                    <%= image_tag "edit1.png", size: '14x14' %>
+                  <% end %>
+                </td>
+                <td class="edit">
+                <%= link_to feed_path(feed.id), method: :delete ,data: { confirm: '投稿を削除しますか？' } do %>
+                  <%= image_tag "delete1.png", size: '14x14' %>
+                <% end %>
+                </td>
+              </tr>
+            </table>
+
+            <%# <!-- <strong><p class="card-text"><%= feed.created_at.strftime("%Y年%-m月%-d日(#{weeks[index - 1]}) %-H時%-M分") %></p></strong>
+            <p class="card-text"><%= feed.content %></p>
+          </div>
+          <%= image_tag feed.image.url , :size =>'450x300', class: "card-img-bottom" %>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Feed', new_feed_path %>
-
+  </div>
 </div>

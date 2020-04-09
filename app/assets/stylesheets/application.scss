@@ -16,6 +16,7 @@
  */
 
 
+
 body,
 #wrapper {
   display: flex;
@@ -37,4 +38,7 @@ li{
 
 ul{
     padding:0;
+}
+#resize_card {
+  margin-bottom: 10px;
 }

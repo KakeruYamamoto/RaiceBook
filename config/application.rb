@@ -12,7 +12,8 @@ module RaiceBook
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.assets.initialize_on_precompile = false
-
+    #エラーメッセージ
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
     config.generators do |g| # 無駄なファイルが作成されないようにする
       g.test_framework :rspec,
                        fixtures: true, # これらのものはgemで記述したもの
