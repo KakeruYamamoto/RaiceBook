@@ -1,6 +1,6 @@
 # README
 
-# DIC課題：フェイスブッククローン（Railsで作ったのでRaiceBook）
+# DIC課題(2/6)：フェイスブッククローン（Railsで作ったのでRaiceBook）
 ## Heroku：https://fast-brushlands-96011.herokuapp.com/
 
 ## ホーム画面
