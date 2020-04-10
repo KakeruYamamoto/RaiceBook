@@ -54,5 +54,6 @@
 6. $ rails db:migrate （マイグレーションファイルの実行）
 7.  #config/initializers/locale.rb内の"I18n"の二行をコメントアウト（8.のコマンド終了後、戻す）
 8. $ rails db:seed (シードデータの生成)
-9. $ rails s  
+9. $ bundle exec rspec
+10. $ rails s  
 ```
