@@ -39,8 +39,8 @@ test_user3 = User.create(name: name3,
                         email: email3,
                         password: email3,
                         password_confirmation: email3)
+                        1
 # ユーザPOST１
-
 3.times do |n|
   content = Faker::ChuckNorris.fact
   feed1 = test_user1.feeds.build(
@@ -54,7 +54,7 @@ end
 3.times do |n|
   content = Faker::ChuckNorris.fact
   feed2 = test_user2.feeds.build(
-          image: open("#{Rails.root}/db/fixtures/img#{rand(11)}.jpg"),
+          image: open("#{Rails.root}/db/fixtures/img#{rand(1..10)}.jpg"),
           content: content
           )
   feed2.save
@@ -64,7 +64,7 @@ end
 3.times do |n|
   content = Faker::ChuckNorris.fact
   feed3 = test_user3.feeds.build(
-          image: open("#{Rails.root}/db/fixtures/img#{rand(11)}.jpg"),
+          image: open("#{Rails.root}/db/fixtures/img#{rand(1..10)}.jpg"),
           content: content
           )
   feed3.save
