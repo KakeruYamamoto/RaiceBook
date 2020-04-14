@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :feeds do
     collection do
       post :new_guest, as: 'guest_sign_in'
-      post :confirm
     end
   end
 end

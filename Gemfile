@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Core
 ruby '2.6.3'
 gem 'rails', '~> 5.2.3'
-gem 'bootsnap', '>= 1.1.0', require: false
+
 
 # Middleware
 gem 'pg', '>= 0.18', '< 2.0'
@@ -24,6 +24,9 @@ gem 'bcrypt', '3.1.11'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+
+# Navigation
+gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'better_errors'
